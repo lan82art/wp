@@ -29,7 +29,9 @@ add_action('admin_menu', 'LanartPageTitleMenu');
 
 add_filter( 'pre_get_document_title', function(){
 
-    return get_option('page_title');
+    if(is_front_page()){
+        return get_option('page_title');
+    }
 } );
 
 
